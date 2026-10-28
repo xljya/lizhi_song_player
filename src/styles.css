@@ -275,6 +275,59 @@ img {
 
 /* ── Album rail ── */
 
+.album-rail-wrap {
+  position: relative;
+}
+
+.album-rail-button {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .album-rail {
+    cursor: grab;
+    user-select: none;
+  }
+
+  .album-rail.is-dragging {
+    cursor: grabbing;
+    scroll-snap-type: none;
+  }
+
+  .album-rail.is-dragging .album-card {
+    cursor: grabbing;
+  }
+
+  .is-scrollable .album-rail-button {
+    position: absolute;
+    top: calc((100% - 14px - 48px) / 2 - 18px);
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #fbfbfd;
+    color: var(--accent);
+    box-shadow: 0 2px 8px rgba(29, 29, 31, 0.14);
+  }
+
+  .album-rail-button-prev {
+    left: -16px;
+  }
+
+  .album-rail-button-next {
+    right: -16px;
+  }
+
+  .album-rail-button:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
 .album-rail {
   display: grid;
   grid-auto-columns: 152px;
